@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-// Log once on import to verify the key
+// DEBUG: log to verify env and model
 console.log("🔑 OPENAI_API_KEY is:", process.env.OPENAI_API_KEY);
 
 const openai = new OpenAI({
@@ -9,6 +9,7 @@ const openai = new OpenAI({
 
 export default async function handler(req, res) {
   console.log("🧠 Using model gpt-3.5-turbo for goal:", req.body.goal);
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
