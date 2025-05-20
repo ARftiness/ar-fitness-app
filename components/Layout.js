@@ -1,5 +1,4 @@
 // components/Layout.js
-// components/Layout.js
 import Image from "next/image";
 import Link from "next/link";
 
