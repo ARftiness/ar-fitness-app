@@ -2,7 +2,7 @@
 // components/Layout.js
 import Image from "next/image";
 import Link from "next/link";
-// remove any import logo from "../public/..." line
+
 
 export default function Layout({ children }) {
   return (
