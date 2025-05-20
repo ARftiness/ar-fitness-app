@@ -1,9 +1,8 @@
-import { Configuration, OpenAIApi } from "openai";
+import OpenAI from "openai";
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 });
-const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         { role: "system", content: "You’re a fitness coach that writes workouts." },
@@ -23,7 +22,8 @@ export default async function handler(req, res) {
       ],
     });
 
-    const workout = completion.data.choices[0].message.content;
+    // The generated workout text is in completion.choices[0].message.content
+    const workout = completion.choices[0].message.content;
     res.status(200).json({ workout });
   } catch (error) {
     console.error(error);
