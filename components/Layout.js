@@ -9,7 +9,8 @@ export default function Layout({ children }) {
       <nav className="flex items-center justify-between px-6 py-4 bg-primary">
         <Link href="/">
           <a className="flex items-center">
-            <<Image src="/logo.png" alt="AR Fitness" width={60} height={60} />
+            <Image src="/logo.png" alt="AR Fitness" width={60} height={60} />
+
             <span className="ml-2 text-xl font-bold text-secondary">
               AR Fitness
             </span>
