@@ -7,13 +7,10 @@ export default function Layout({ children }) {
     <div className="min-h-screen flex flex-col bg-secondary text-accent">
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-4 bg-primary">
-        {/* Logo + Home Link */}
         <Link href="/" className="flex items-center">
           <Image src="/logo.png" alt="AR Fitness" width={50} height={50} />
           <span className="ml-3 text-2xl font-bold">AR Fitness</span>
         </Link>
-
-        {/* Nav Links */}
         <div className="space-x-6">
           <Link href="/" className="hover:text-primary-dark">Home</Link>
           <Link href="/history" className="hover:text-primary-dark">History</Link>
