@@ -4,27 +4,30 @@ import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-accent">
+    <div className="min-h-screen flex flex-col bg-secondary text-accent">
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-4 bg-primary">
         <Link href="/">
-          <a className="flex items-center">
-            <Image src="/logo.png" alt="AR Fitness" width={60} height={60} />
-
-            <span className="ml-2 text-xl font-bold text-secondary">
-              AR Fitness
-            </span>
-          </a>
+          <div className="flex items-center cursor-pointer">
+            <Image src="/logo.png" alt="AR Fitness" width={50} height={50} />
+            <span className="ml-3 text-2xl font-bold">AR Fitness</span>
+          </div>
         </Link>
-        <div className="space-x-4">
-          <Link href="/"><a className="hover:text-primary">Home</a></Link>
-          <Link href="/history"><a className="hover:text-primary">History</a></Link>
-          <Link href="/about"><a className="hover:text-primary">About</a></Link>
+        <div className="space-x-6">
+          <Link href="/">
+            <a className="hover:text-primary-dark">Home</a>
+          </Link>
+          <Link href="/history">
+            <a className="hover:text-primary-dark">History</a>
+          </Link>
+          <Link href="/about">
+            <a className="hover:text-primary-dark">About</a>
+          </Link>
         </div>
       </nav>
 
       {/* Main content */}
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-12">
         {children}
       </main>
 
